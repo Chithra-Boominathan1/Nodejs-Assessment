@@ -15,5 +15,3 @@ An Express.js application that receives JSON data from clients and forwards it t
 
 ---
 
-## 🏗️ Project Structure
-
