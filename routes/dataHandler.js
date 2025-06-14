@@ -20,6 +20,7 @@ router.post('/incoming_data', async (req, res) => {
 
   for (const dest of destinations) {
     try {
+      console.log(dest.url)
       const method = dest.method.toUpperCase();
       const options = {
         method,
@@ -32,7 +33,7 @@ router.post('/incoming_data', async (req, res) => {
       } else if (['POST', 'PUT'].includes(method)) {
         options.data = data;
       }
-
+      console.log(options.params,options.data,"options")
       await axios(options);
     } catch (err) {
       console.error(`Failed to send to ${dest.url}:`, err.message);
